@@ -17,7 +17,5 @@
     "url": "https://github.com/ogbeche77/serverside/issues"
   },
   "homepage": "https://github.com/ogbeche77/serverside#readme",
-  "dependencies": {
-    "lodash": "^4.17.15"
-  }
+  "dependencies": {}
 }
