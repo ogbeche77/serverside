@@ -6,7 +6,7 @@
 
 </head>
 <body>
-<form action ="/" method="POST" id="form">
+<form action ="/" method="POST" id="form"> <!--posting jquery data using ajax-->
 		<div id="item1">
 		<label><b>Username/Email</b></label>
 		<input type="text" placeholder="Username/Email" name="uname" required>
@@ -24,18 +24,19 @@
 		<span id="item3"><a href="#">Forgot password?</a></span>
 	</div>
 </form>
-
+<!---jquery CDN-->
 <script
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
+
 <script>
 $(document).ready(()=>{
-	$("#form").submit((e)=>{
+	$("#form").submit((e)=>{  //submit handler takes callback function that has events as parameter
 		e.preventDefault();
-		$.ajax({
-			url : "/ ",
-			type : "post",
+		$.ajax({   	//this post json data back to the server
+			url : "/ ", 	//endpoint in the server
+			type : "post", //kind of http request
 			contentType :"application/json",
 			data : JSON.stringify($("#form").serializeArray()),
 			success : (response)=>{
