@@ -6,9 +6,8 @@ const exp = express();
 
 exp.use("/public",express.static(path.join(__dirname,"static")));
 exp.set("view engine", "ejs");
-exp.get("/",(req,res)=>{
-res.render("index");
-});
+
+exp.get("/",(req,res)=>{res.render("index");});
 
 exp.listen(3000);
 
