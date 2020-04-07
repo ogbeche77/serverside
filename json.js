@@ -20,7 +20,7 @@ res.sendFile (path.join(__dirname, "static", "form1.html"));
     exp.post("/",(req,res)=>{
     console.log(req.body);
     
-    res.json({sucess :true});
+    res.json({success :true});
 });
 
 exp.listen(3000);
