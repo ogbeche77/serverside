@@ -8,19 +8,19 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const exp = express();
 
-exp.use("/public",express.static(path.join(__dirname,"static")));
-exp.use(bodyParser.urlencoded({extended:false}));
+exp.use("/public", express.static(path.join(__dirname, "static")));
+exp.use(bodyParser.urlencoded({ extended: false }));
 exp.use(bodyParser.json()); //parse json & attach to request.body
 
-exp.get("/",(req,res)=>{
-res.sendFile (path.join(__dirname, "static", "form1.html"));
+exp.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "static", "form1.html"));
 });
 
 //database section here
-    exp.post("/",(req,res)=>{
-    console.log(req.body);
-    
-    res.json({success :true});
+exp.post("/", (req, res) => {
+  console.log(req.body);
+
+  res.json({ success: true });
 });
 
 exp.listen(3000);
