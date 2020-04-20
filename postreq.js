@@ -6,17 +6,17 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const exp = express();
 
-exp.use("/public",express.static(path.join(__dirname,"static")));
-exp.use(bodyParser.urlencoded({extended:false}));
+exp.use("/public", express.static(path.join(__dirname, "static")));
+exp.use(bodyParser.urlencoded({ extended: false }));
 
-exp.get("/",(req,res)=>{
-res.sendFile (path.join(__dirname, "static", "form.html"));
+exp.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "static", "form.html"));
 });
 
-exp.post("/",(req,res)=>{
-    console.log(req.body);
-    //database section here
-    res.send("login successful");
+exp.post("/", (req, res) => {
+  console.log(req.body);
+  //database section here
+  res.send("login successful");
 });
 
 exp.listen(3000);
