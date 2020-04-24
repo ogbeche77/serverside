@@ -11,7 +11,7 @@ fs.writeFile("example.txt", "Hier ist ein beispiel", (err) => {
     else console.log(file);
   });
 });
-/*//renaming file
+/*//renaming the file
 const fs = require("fs");
 
 fs.rename("example.txt", "example3.txt", (err)=>{
